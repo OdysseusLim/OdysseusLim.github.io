@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Lock } from "lucide-react";
+import { ExternalLink, FolderGit2, Lock } from "lucide-react";
 
 const projects = [
   {
@@ -47,77 +47,91 @@ const projects = [
 export function Projects() {
   return (
     <section id="projects" className="py-20 scroll-mt-20">
-      <h2 className="text-sm font-bold uppercase tracking-wider text-primary mb-8">
-        Projects
-      </h2>
+      <div className="flex items-center gap-3 mb-8">
+        <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
+          <FolderGit2 className="h-4 w-4 text-primary" />
+        </div>
+        <h2 className="text-sm font-bold uppercase tracking-wider text-primary">
+          Projects
+        </h2>
+        <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent" />
+      </div>
 
-      <div className="space-y-12">
-        {projects.map((project) => (
+      <div className="space-y-6">
+        {projects.map((project, index) => (
           <article
             key={project.title}
-            className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+            className="group glass-card gradient-border rounded-2xl p-6 transition-all duration-300 hover:bg-card/60 hover:scale-[1.02] hover:glow-sm"
           >
-            <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-secondary/50" />
-
-            <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground sm:col-span-2">
-              {project.date}
-            </header>
-
-            <div className="z-10 sm:col-span-6">
-              <h3 className="font-medium leading-snug text-foreground">
-                {project.githubUrl ? (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-semibold leading-tight group/link text-lg hover:text-primary transition-colors"
-                  >
-                    {project.title}
-                    <ExternalLink className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                  </a>
-                ) : (
-                  <span className="inline-flex items-center gap-2 font-semibold leading-tight text-lg">
-                    {project.title}
-                    {project.isPrivate && (
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground bg-secondary px-2 py-0.5 rounded-full">
-                        <Lock className="h-3 w-3" />
-                        Private
-                      </span>
-                    )}
-                  </span>
-                )}
-                {project.subtitle && (
-                  <span className="block text-sm text-muted-foreground font-normal mt-1">
-                    {project.subtitle}
-                  </span>
-                )}
-              </h3>
-
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {project.description}
-              </p>
-
-              <ul className="mt-4 space-y-2">
-                {project.highlights.map((highlight, index) => (
-                  <li
-                    key={index}
-                    className="text-sm text-muted-foreground flex gap-2"
-                  >
-                    <span className="text-primary mt-1.5 shrink-0">•</span>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <li key={tag}>
-                    <span className="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                      {tag}
+            {/* Header Row */}
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-bold text-lg text-foreground hover:text-primary transition-colors group/link"
+                    >
+                      {project.title}
+                      <ExternalLink className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                    </a>
+                  ) : (
+                    <span className="font-bold text-lg text-foreground">
+                      {project.title}
                     </span>
-                  </li>
-                ))}
-              </ul>
+                  )}
+                  {project.isPrivate && (
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-secondary/80 border border-border/50 px-2.5 py-1 rounded-full">
+                      <Lock className="h-3 w-3" />
+                      Private
+                    </span>
+                  )}
+                </div>
+                {project.subtitle && (
+                  <p className="text-sm text-primary/80 font-medium mt-1">
+                    {project.subtitle}
+                  </p>
+                )}
+              </div>
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground bg-secondary/50 px-3 py-1.5 rounded-full border border-border/30 whitespace-nowrap">
+                {project.date}
+              </span>
+            </div>
+
+            {/* Description */}
+            <p className="text-sm leading-relaxed text-muted-foreground mb-4">
+              {project.description}
+            </p>
+
+            {/* Highlights */}
+            <ul className="space-y-2 mb-5">
+              {project.highlights.map((highlight, idx) => (
+                <li
+                  key={idx}
+                  className="text-sm text-muted-foreground flex gap-3"
+                >
+                  <span className="text-primary mt-1 shrink-0">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                    </svg>
+                  </span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 text-xs font-medium text-primary bg-primary/10 border border-primary/20 rounded-full transition-colors hover:bg-primary/20"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </article>
         ))}

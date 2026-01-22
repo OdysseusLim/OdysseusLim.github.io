@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Terminal } from "lucide-react";
 
 const socialLinks = [
   {
@@ -16,109 +16,115 @@ const socialLinks = [
   },
 ];
 
+const contactInfo = [
+  { icon: MapPin, text: "Imus City, Cavite, Philippines" },
+  { icon: Mail, text: "jhndysslm@protonmail.com", href: "mailto:jhndysslm@protonmail.com" },
+  { icon: Phone, text: "+63 915 596 4194", href: "tel:+639155964194" },
+];
+
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
+];
+
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center py-20 lg:py-0">
-      <div className="space-y-6">
-        <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/30 shadow-lg shadow-primary/10">
-          <Image
-            src="/profile.jpeg"
-            alt="John Odysseus Lim"
-            fill
-            className="object-cover object-top"
-            priority
-          />
+    <aside className="lg:fixed lg:top-0 lg:left-0 lg:w-[45%] lg:h-screen flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-0">
+      <div className="space-y-8 max-w-md mx-auto lg:mx-0 lg:ml-auto lg:mr-12">
+        {/* Profile Image */}
+        <div className="flex justify-center lg:justify-start">
+          <div className="relative group">
+            <div className="absolute -inset-2 bg-gradient-to-r from-primary/50 via-primary/20 to-primary/50 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/40 shadow-xl shadow-primary/20">
+              <Image
+                src="/profile.jpeg"
+                alt="John Odysseus Lim"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="space-y-2">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+        {/* Name and Title */}
+        <div className="space-y-3 text-center lg:text-left">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
             John Odysseus Lim
           </h1>
-          <p className="text-xl md:text-2xl font-medium text-primary">
-            Backend Developer & Data Scientist
-          </p>
+          <div className="flex items-center justify-center lg:justify-start gap-2 text-primary">
+            <Terminal className="w-5 h-5" />
+            <span className="text-lg md:text-xl font-medium">
+              Aspiring Backend Developer or AI/ML Engineer
+            </span>
+          </div>
         </div>
 
-        <p className="text-muted-foreground max-w-lg leading-relaxed">
-          I build scalable backend systems and data pipelines. Specializing in
-          Python, Django, real-time WebSocket applications, and machine learning
-          solutions for complex problems.
+        {/* Description */}
+        <p className="text-muted-foreground text-base leading-relaxed text-center lg:text-left">
+          I build scalable backend systems and data pipelines. Specializing in Python, Django, 
+          real-time WebSocket applications, and machine learning solutions for complex problems.
         </p>
 
-        <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-primary" />
-            <span>Imus City, Cavite, Philippines</span>
-          </div>
-          <a
-            href="mailto:jhndysslm@protonmail.com"
-            className="flex items-center gap-2 hover:text-primary transition-colors"
-          >
-            <Mail className="h-4 w-4 text-primary" />
-            <span>jhndysslm@protonmail.com</span>
-          </a>
-          <div className="flex items-center gap-2">
-            <Phone className="h-4 w-4 text-primary" />
-            <span>+63 915 596 4194</span>
-          </div>
-        </div>
-
-        <nav className="pt-8">
-          <ul className="space-y-3 text-sm font-medium uppercase tracking-wider">
-            <li>
-              <a
-                href="#about"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
-              >
-                <span className="w-8 h-px bg-muted-foreground group-hover:w-16 group-hover:bg-primary transition-all" />
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
-              >
-                <span className="w-8 h-px bg-muted-foreground group-hover:w-16 group-hover:bg-primary transition-all" />
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
-              >
-                <span className="w-8 h-px bg-muted-foreground group-hover:w-16 group-hover:bg-primary transition-all" />
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#education"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
-              >
-                <span className="w-8 h-px bg-muted-foreground group-hover:w-16 group-hover:bg-primary transition-all" />
-                Education
-              </a>
-            </li>
+        {/* Navigation - Desktop only */}
+        <nav className="hidden lg:block pt-4">
+          <ul className="space-y-3">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <span className="w-8 h-px bg-muted-foreground/50 group-hover:w-16 group-hover:bg-primary transition-all duration-300" />
+                  <span className="text-sm font-medium tracking-wide uppercase">
+                    {item.label}
+                  </span>
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        <div className="flex items-center gap-4 pt-6">
+        {/* Contact Info */}
+        <div className="space-y-3 pt-4">
+          {contactInfo.map((item) => (
+            <div key={item.text} className="flex items-center justify-center lg:justify-start gap-3 text-sm text-muted-foreground">
+              <div className="w-8 h-8 rounded-lg bg-card/60 border border-border/50 flex items-center justify-center">
+                <item.icon className="w-4 h-4 text-primary/70" />
+              </div>
+              {item.href ? (
+                <a href={item.href} className="hover:text-primary transition-colors">
+                  {item.text}
+                </a>
+              ) : (
+                <span>{item.text}</span>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Social Links */}
+        <div className="flex items-center justify-center lg:justify-start gap-3 pt-2">
           {socialLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              className="group relative"
               aria-label={link.label}
-              className="text-muted-foreground hover:text-primary transition-colors"
             >
-              <link.icon className="h-6 w-6" />
+              <div className="absolute -inset-1 bg-primary/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-center gap-2 glass-card px-4 py-2.5 rounded-lg border border-border/50 group-hover:border-primary/50 transition-all duration-300">
+                <link.icon className="w-5 h-5 text-primary" />
+                <span className="font-medium text-sm text-foreground">{link.label}</span>
+              </div>
             </a>
           ))}
         </div>
       </div>
-    </section>
+    </aside>
   );
 }
