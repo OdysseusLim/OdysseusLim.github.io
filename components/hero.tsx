@@ -36,7 +36,7 @@ export function Hero() {
         {/* Profile Image */}
         <div className="flex justify-center lg:justify-start">
           <div className="relative group">
-            <div className="absolute -inset-2 bg-linear-to-r from-primary/50 via-primary/20 to-primary/50 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-primary/50 via-primary/20 to-primary/50 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/40 shadow-xl shadow-primary/20">
               <Image
                 src="/profile.jpeg"

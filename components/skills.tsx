@@ -46,7 +46,7 @@ export function Skills() {
         <h2 className="text-sm font-bold uppercase tracking-wider text-primary">
           Core Competencies
         </h2>
-        <div className="flex-1 h-px bg-linear-to-r from-primary/50 to-transparent" />
+        <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent" />
       </div>
 
       <div className="grid gap-6">
