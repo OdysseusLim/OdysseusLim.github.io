@@ -12,7 +12,7 @@ export function Education() {
         <h2 className="text-sm font-bold uppercase tracking-wider text-primary">
           Education
         </h2>
-        <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent" />
+        <div className="flex-1 h-px bg-linear-to-r from-primary/50 to-transparent" />
       </div>
 
       <div className="glass-card gradient-border rounded-2xl p-6 md:p-8 relative overflow-hidden">

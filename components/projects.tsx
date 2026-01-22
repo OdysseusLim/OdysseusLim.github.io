@@ -54,7 +54,7 @@ export function Projects() {
         <h2 className="text-sm font-bold uppercase tracking-wider text-primary">
           Projects
         </h2>
-        <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent" />
+        <div className="flex-1 h-px bg-linear-to-r from-primary/50 to-transparent" />
       </div>
 
       <div className="space-y-6">
