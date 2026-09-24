@@ -64,7 +64,7 @@ export function Hero() {
 
         {/* Description */}
         <p className="text-muted-foreground text-base leading-relaxed text-center lg:text-left">
-          I build scalable web applications, deep learning architectures, and real-time data pipelines. Specializing in Python, PyTorch, full-stack development, WebSockets, and embedded hardware integration.
+          Computer Engineering graduate with hands-on full-stack internship experience in production web applications. Specializing in Python, deep learning architectures, real-time WebSockets, and embedded hardware integration.
         </p>
 
         {/* Navigation - Desktop only */}
