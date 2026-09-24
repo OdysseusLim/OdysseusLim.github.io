@@ -45,6 +45,12 @@ export function Hero() {
                 className="object-cover object-top"
                 priority
               />
+              <button
+                onClick={() => window.print()}
+                className="no-print text-xs font-medium text-primary hover:underline mt-4"
+              >
+                Download as PDF / Print
+              </button>
             </div>
           </div>
         </div>

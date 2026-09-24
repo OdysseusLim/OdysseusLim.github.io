@@ -148,3 +148,41 @@
   pointer-events: none;
   z-index: 0;
 }
+
+@media print {
+  /* Hide decorative background blur overlays and animations */
+  .animated-gradient,
+  .noise-overlay,
+  .pointer-events-none {
+    background: none !important;
+    display: none !important;
+  }
+
+  /* Reset layout for standard page printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  main {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Prevent section cards from splitting across page breaks */
+  .glass-card, 
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Hide print buttons or navigation if needed */
+  .no-print {
+    display: none !important;
+  }
+}
