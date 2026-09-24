@@ -150,39 +150,57 @@
 }
 
 @media print {
-  /* Hide decorative background blur overlays and animations */
-  .animated-gradient,
-  .noise-overlay,
-  .pointer-events-none {
-    background: none !important;
+  /* 1. Hide specific non-printable elements */
+  .no-print,
+  .noise-overlay::after {
     display: none !important;
   }
 
-  /* Reset layout for standard page printing */
-  body {
-    background: white !important;
-    color: black !important;
+  /* 2. Reset global page backgrounds and text colors */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
+  /* 3. Convert animated background to plain white */
+  .animated-gradient {
+    background: #ffffff !important;
+    animation: none !important;
+  }
+
+  /* 4. Convert the fixed Hero sidebar into standard static block flow */
+  aside {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 0 2rem 0 !important;
+    display: block !important;
+  }
+
+  /* 5. Convert main container into standard full width */
   main {
     width: 100% !important;
     margin-left: 0 !important;
     padding: 0 !important;
+    display: block !important;
   }
 
-  /* Prevent section cards from splitting across page breaks */
-  .glass-card, 
+  /* 6. Ensure glass cards render clean borders on white paper */
+  .glass-card,
   section {
     break-inside: avoid;
     page-break-inside: avoid;
     box-shadow: none !important;
     border: 1px solid #e5e7eb !important;
-    background: white !important;
-    color: black !important;
+    background: #ffffff !important;
+    color: #000000 !important;
   }
 
-  /* Hide print buttons or navigation if needed */
-  .no-print {
-    display: none !important;
+  /* Fix link colors for print */
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
   }
 }
