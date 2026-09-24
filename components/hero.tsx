@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Github, Linkedin, Mail, MapPin, Phone, Terminal } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Terminal, Printer } from "lucide-react";
 
 const socialLinks = [
   {
