@@ -55,17 +55,16 @@ export function Hero() {
             John Odysseus Lim
           </h1>
           <div className="flex items-center justify-center lg:justify-start gap-2 text-primary">
-            <Terminal className="w-5 h-5" />
+            <Terminal className="w-5 h-5 shrink-0" />
             <span className="text-lg md:text-xl font-medium">
-              Aspiring Backend Developer or AI/ML Engineer
+              Computer Engineer
             </span>
           </div>
         </div>
 
         {/* Description */}
         <p className="text-muted-foreground text-base leading-relaxed text-center lg:text-left">
-          I build scalable backend systems and data pipelines. Specializing in Python, Django, 
-          real-time WebSocket applications, and machine learning solutions for complex problems.
+          I build scalable web applications, deep learning architectures, and real-time data pipelines. Specializing in Python, PyTorch, full-stack development, WebSockets, and embedded hardware integration.
         </p>
 
         {/* Navigation - Desktop only */}
@@ -91,7 +90,7 @@ export function Hero() {
         <div className="space-y-3 pt-4">
           {contactInfo.map((item) => (
             <div key={item.text} className="flex items-center justify-center lg:justify-start gap-3 text-sm text-muted-foreground">
-              <div className="w-8 h-8 rounded-lg bg-card/60 border border-border/50 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-card/60 border border-border/50 flex items-center justify-center shrink-0">
                 <item.icon className="w-4 h-4 text-primary/70" />
               </div>
               {item.href ? (

@@ -17,42 +17,31 @@ export function About() {
 
       <div className="glass-card gradient-border rounded-2xl p-6 md:p-8 space-y-6">
         <p className="text-muted-foreground leading-relaxed">
-          I&apos;m a Computer Engineering student at the{" "}
+          I&apos;m a Computer Engineering graduate from{" "}
           <span className="text-foreground font-semibold px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20">
-            Technological Institute of the Philippines
+            Technological Institute of the Philippines – Manila
           </span>
-          , specializing in the Data Science track. My passion lies at the
-          intersection of{" "}
+          , specializing in the Data Science track. I'm well versed in{" "}
           <span className="text-primary font-medium">
-            backend development
-          </span>{" "}
-          and{" "}
-          <span className="text-primary font-medium">
-            machine learning
+            Full-Stack Software Engineering
           </span>
-          , where I build systems that process and analyze data at scale.
+          ,{" "}
+          <span className="text-primary font-medium">
+            AI/Machine Learning
+          </span>
+          , and{" "}
+          <span className="text-primary font-medium">
+            Embedded Systems
+          </span>
+          —building scalable, data-driven systems that solve real-world technical challenges.
         </p>
 
         <p className="text-muted-foreground leading-relaxed">
-          I specialize in building{" "}
-          <span className="text-foreground font-medium">
-            real-time applications
-          </span>{" "}
-          using Django Channels and WebSockets, creating responsive messaging
-          systems with features like presence tracking and typing indicators. My
-          work spans from developing{" "}
-          <span className="text-foreground font-medium">web crawlers</span> for
-          AI regulation research to implementing{" "}
-          <span className="text-foreground font-medium">
-            predictive models
-          </span>{" "}
-          for epidemiological data.
+          Recently, as a Web Developer Intern at Xtreme Offshore Outsourcing, I enhanced production healthcare workflows using Vue.js, Node.js, and PostgreSQL. Beyond full-stack development, my technical work ranges from computer vision (CNN-LSTM action recognition) and acoustic signal processing for industrial anomaly detection to real-time WebSocket messaging and automated IoT control hardware.
         </p>
 
         <p className="text-muted-foreground leading-relaxed">
-          When I&apos;m not coding, I&apos;m exploring new technologies,
-          contributing to open-source projects, or diving into research papers
-          on machine learning and distributed systems.
+          Whether optimizing deep learning models, engineering dynamic web applications, or designing hardware-software control loops, I thrive on building end-to-end solutions that are efficient, robust, and impactful.
         </p>
       </div>
     </section>

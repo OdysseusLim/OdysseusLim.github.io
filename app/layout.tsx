@@ -7,10 +7,10 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: 'John Odysseus Lim | Backend Developer & Data Scientist',
-  description: 'Backend developer and data scientist specializing in Python, Django, real-time systems, and machine learning. Computer Engineering student at TIP Manila.',
+  title: 'John Odysseus Lim | Computer Engineer',
+  description: 'Portfolio of John Odysseus Lim, Computer Engineering graduate specializing in Python, AI/ML, real-time backend systems, full-stack development, and embedded control systems.',
   generator: 'v0.app',
-  keywords: ['backend developer', 'data scientist', 'python', 'django', 'machine learning', 'websockets'],
+  keywords: ['computer engineer', 'data science', 'python', 'django', 'machine learning', 'full stack', 'pytorch', 'websockets'],
   authors: [{ name: 'John Odysseus Lim' }],
   icons: {
     icon: [

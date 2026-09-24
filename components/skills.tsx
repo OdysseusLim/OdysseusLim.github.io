@@ -1,37 +1,42 @@
 "use client";
 
-import { Code2, Database, Server, Wrench } from "lucide-react";
+import { Code2, Database, Cpu, Layout, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Backend & Real-Time Systems",
-    icon: Server,
-    skills: [
-      { name: "Python", description: "Production-grade backend development" },
-      { name: "Django & Django REST Framework", description: "API design, auth, middleware" },
-      { name: "Django Channels & WebSockets", description: "Real-time messaging, presence tracking" },
-      { name: "ASGI / Daphne", description: "Async server architecture" },
-      { name: "PostgreSQL", description: "Relational modeling, query optimization" },
-    ],
-  },
-  {
-    title: "Machine Learning & Data Science",
+    title: "AI, Deep Learning & Signal Processing",
     icon: Database,
     skills: [
-      { name: "Scikit-learn", description: "Random Forest, Gradient Boosting, XGBoost" },
-      { name: "Feature Engineering", description: "Cross-validation, metrics, error analysis" },
-      { name: "Unsupervised Learning", description: "K-Means, Agglomerative Clustering" },
-      { name: "Data Pipelines", description: "Preprocessing, scaling, reproducible experiments" },
+      { name: "PyTorch & TensorFlow / Keras", description: "CNN-LSTM architectures, MobileNetV2 transfer learning, BiLSTM" },
+      { name: "Computer Vision & Audio Processing", description: "OpenCV image pipelines, PyAudio, SciPy Butterworth filtering" },
+      { name: "Machine Learning & Analytics", description: "Scikit-Learn, XGBoost, Random Forest, K-Means & Agglomerative Clustering" },
+      { name: "Data Engineering", description: "NumPy, spatial alignment, class balancing, feature engineering" },
     ],
   },
   {
-    title: "Web & Infrastructure",
+    title: "Software & Web Development",
+    icon: Layout,
+    skills: [
+      { name: "Full-Stack Web (JS/Node)", description: "Vue.js, Node.js, Express, EJS Templating, Sass, Bootstrap" },
+      { name: "Python Web Backends", description: "Django, Django REST Framework, WebSockets, Django Channels, Daphne" },
+      { name: "Databases & ORM", description: "PostgreSQL, MySQL, Sequelize ORM, query optimization, ERD design" },
+    ],
+  },
+  {
+    title: "Embedded & Hardware Integration",
+    icon: Cpu,
+    skills: [
+      { name: "Microcontrollers & SBCs", description: "Raspberry Pi 5, ESP32, Arduino Nano" },
+      { name: "Sensor & Actuator Control", description: "HX711 load cells, 8-channel relay matrices, signal isolation" },
+      { name: "Real-Time Control Systems", description: "State-driven algorithms, multi-variable control loops" },
+    ],
+  },
+  {
+    title: "Automation & Tooling",
     icon: Wrench,
     skills: [
-      { name: "Docker", description: "Containerized services, environment consistency" },
-      { name: "Web Scraping", description: "Playwright, BeautifulSoup" },
-      { name: "Git", description: "Version control, collaborative workflows" },
-      { name: "Linux / Bash", description: "Deployment, server management" },
+      { name: "Web Scraping & Automation", description: "Playwright, BeautifulSoup4, JSON data pipelines" },
+      { name: "DevOps & OS", description: "Docker, Git, GitHub, GitLab, Linux / Bash" },
     ],
   },
 ];
@@ -44,7 +49,7 @@ export function Skills() {
           <Code2 className="h-4 w-4 text-primary" />
         </div>
         <h2 className="text-sm font-bold uppercase tracking-wider text-primary">
-          Core Competencies
+          Technical Skills
         </h2>
         <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent" />
       </div>

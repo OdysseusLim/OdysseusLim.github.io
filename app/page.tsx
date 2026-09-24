@@ -1,5 +1,6 @@
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
+import { Experience } from "@/components/experience";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
 import { Education } from "@/components/education";
@@ -22,6 +23,7 @@ export default function Home() {
         <main className="lg:w-[55%] lg:ml-[45%] min-h-screen px-6 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-24">
           <div className="max-w-2xl space-y-24">
             <About />
+            <Experience />
             <Projects />
             <Skills />
             <Education />
