@@ -33,9 +33,10 @@ export function Hero() {
   return (
     <aside className="lg:fixed lg:top-0 lg:left-0 lg:w-[45%] lg:h-screen flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-0">
       <div className="space-y-8 max-w-md mx-auto lg:mx-0 lg:ml-auto lg:mr-12">
-        {/* Profile Image */}
-        <div className="flex justify-center lg:justify-start">
-          <div className="relative group">
+        
+        {/* Profile Picture & Print Card Row */}
+        <div className="flex flex-col sm:flex-row items-center gap-5">
+          <div className="relative group shrink-0">
             <div className="absolute -inset-2 bg-gradient-to-r from-primary/50 via-primary/20 to-primary/50 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/40 shadow-xl shadow-primary/20">
               <Image
@@ -45,14 +46,16 @@ export function Hero() {
                 className="object-cover object-top"
                 priority
               />
-              <button
-                onClick={() => window.print()}
-                className="no-print text-xs font-medium text-primary hover:underline mt-4"
-              >
-                Download as PDF / Print
-              </button>
             </div>
           </div>
+
+          <button
+            onClick={() => window.print()}
+            className="no-print inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold text-primary hover:text-primary-foreground bg-primary/10 hover:bg-primary border border-primary/30 rounded-xl transition-all duration-300 cursor-pointer shadow-sm"
+          >
+            <Printer className="w-4 h-4" />
+            <span>Save / Print PDF</span>
+          </button>
         </div>
 
         {/* Name and Title */}
