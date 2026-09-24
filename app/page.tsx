@@ -7,21 +7,21 @@ import { Education } from "@/components/education";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen animated-gradient noise-overlay">
-      {/* Decorative background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <div className="relative min-h-screen animated-gradient noise-overlay print:min-h-0 print:bg-white">
+      {/* Decorative background elements (hidden during print) */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none no-print">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 lg:flex">
+      <div className="relative z-10 lg:flex print:block">
         {/* Left Side - Fixed Profile Sidebar */}
         <Hero />
 
         {/* Right Side - Scrollable Content */}
-        <main className="lg:w-[55%] lg:ml-[45%] min-h-screen px-6 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-24">
-          <div className="max-w-2xl space-y-24">
+        <main className="lg:w-[55%] lg:ml-[45%] min-h-screen px-6 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-24 print:w-full print:ml-0 print:p-0 print:min-h-0">
+          <div className="max-w-2xl space-y-24 print:space-y-8 print:max-w-none">
             <About />
             <Experience />
             <Projects />
@@ -29,7 +29,7 @@ export default function Home() {
             <Education />
 
             {/* Footer */}
-            <footer className="pt-8 pb-4">
+            <footer className="pt-8 pb-4 no-print">
               <div className="glass-card gradient-border rounded-xl p-4 text-center text-sm text-muted-foreground">
                 <p>
                   Built with{" "}
